@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.macaitech</groupId>
+  <artifactId>macai-saas</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>码财SaaS</name>
+  <description>码财SaaS服务架构</description>
+  <modules>
+    <module>macai-saas-common</module>
+    <module>macai-saas-service</module>
+  </modules>
+  
+
+  <properties>
+		<java.version>1.8</java.version>
+		<spring-boot.version>2.1.4.RELEASE</spring-boot.version>
+		<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+		<maven.version>3.1.0</maven.version>
+		<maven.compile.version>3.1</maven.compile.version>
+		<lombok.version>1.18.4</lombok.version>
+		<log4j.version>1.2.17</log4j.version>
+        <swagger2.version>2.6.1</swagger2.version>
+        <fastjson.version>1.2.49</fastjson.version>
+    </properties>
+
+   <dependencyManagement>
+        <dependencies>
+            <!--支持Spring Boot 2.1.X-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+	<!-- 编译、打包 -->
+	<build>
+		<plugins>
+              <plugin>  
+                  <groupId>org.apache.maven.plugins</groupId>  
+                  <artifactId>maven-compiler-plugin</artifactId>  
+                  <version>${maven.compile.version}</version>
+                  <configuration>
+                  	  <encoding>utf-8</encoding>
+                      <source>${java.version}</source>
+                      <target>${java.version}</target>
+                 </configuration>  
+             </plugin>  
+		</plugins>
+	</build>
+	
+</project>
